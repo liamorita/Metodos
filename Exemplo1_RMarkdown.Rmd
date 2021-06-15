@@ -1,0 +1,18 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+
+**Exemplo 1:** Lançamento de uma moeda. Descrição do espaço amostral com duas possibilidades:
+
+```{r, out.width='50%'}
+knitr::include_graphics('./Figuras/moeda.jpg')
+```
+
+Vamos lancar uma moeda, através da função *sample* do R:
+
+```{r}
+moeda=c("cara","coroa")
+sample(moeda,size=1)
+```
