@@ -1,7 +1,7 @@
 ---
-title: "Aula_2"
+title: "Exemplo de Relatorio"
 author: "Lia"
-date: "18/09/2020"
+date: "16/06/2021"
 output:
   html_document: default
 ---
@@ -20,19 +20,13 @@ pegando do site o codigo
 **dados do exemplo 1**
 abrir um novo chunk: Ctrl + Alt + I
 ```{r}
-library(captioner) #para rodar um por um Ctrl + Enter
-library(DT) #pacote datatable
-dados_ex1=read.table("exemplo_1.2.1.txt",sep=";",head=TRUE)
-table_nums <- captioner(prefix = "Tabela") #material da professora para numerar tabelas
-cap <- table_nums("tab1","Dados de Pressão arterial sistólica (mm Hg)")
-
-#carregar o pacote DT
-datatable(dados_ex1,caption=cap,class = 'cell-border order-column compact hover') 
-dados_ex1
+dados=read.table("dados.txt",sep=";",head=TRUE)
+dados
 ```
-
 
 ```{r}
-read.table
+#carregar o pacote DT antes
+#install.packages(DT)
+require(DT) #pacote datatable para construir tabelas
+datatable(dados,caption="Tabela 1: Apresentação dos dados",class = 'cell-border order-column compact hover') 
 ```
-
